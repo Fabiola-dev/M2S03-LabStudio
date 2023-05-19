@@ -6,4 +6,23 @@ public class Cargo {
     private Double salarioBase;
     private Nivel nivel;
 
+    public Cargo(){
+
+    }
+    public Cargo(String descricao, Double salarioBase, Nivel nivel) {
+        this.descricao = descricao;
+        this.salarioBase = salarioBase;
+        this.nivel = nivel;
+    }
+    public String getDescricao() { return descricao; }
+
+    public void setDescricao(String descricao) { this.descricao = descricao; }
+
+    public Double getSalarioBase() { return salarioBase; }
+
+    public void setSalarioBase(Double salarioBase) { this.salarioBase = salarioBase; }
+
+    public Nivel getNivel() { return nivel; }
+
+    public void setNivel(Nivel nivel) { this.nivel = nivel; }
 }
