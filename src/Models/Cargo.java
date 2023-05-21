@@ -6,9 +6,9 @@ public class Cargo {
     private Double salarioBase;
     private Nivel nivel;
 
-    public Cargo(){
-
-    }
+//    public Cargo(){
+//
+//    }
     public Cargo(String descricao, Double salarioBase, Nivel nivel) {
         this.descricao = descricao;
         this.salarioBase = salarioBase;
@@ -25,4 +25,13 @@ public class Cargo {
     public Nivel getNivel() { return nivel; }
 
     public void setNivel(Nivel nivel) { this.nivel = nivel; }
+
+    @Override
+    public String toString() {
+        return "Cargo{" +
+                "descricao='" + descricao + '\'' +
+                ", salarioBase=" + salarioBase +
+                ", nivel=" + nivel +
+                '}';
+    }
 }
