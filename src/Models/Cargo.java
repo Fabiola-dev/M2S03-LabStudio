@@ -6,9 +6,9 @@ public class Cargo {
     private Double salarioBase;
     private Nivel nivel;
 
-//    public Cargo(){
-//
-//    }
+    public Cargo(){
+
+    }
     public Cargo(String descricao, Double salarioBase, Nivel nivel) {
         this.descricao = descricao;
         this.salarioBase = salarioBase;

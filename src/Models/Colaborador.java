@@ -36,4 +36,13 @@ public class Colaborador {
                 ", salario=" + salario +
                 '}';
     }
+
+    //Faça um método para listar colaboradores da lista de colaboradores que não possuem data de desligamento.
+    public static void colaboradorSemDesligamento(ArrayList<Colaborador> colaboradores){
+        for (Colaborador colaborador : colaboradores){
+            if (colaborador.getDtDesligamento() == null){
+                System.out.println(colaborador);
+            }
+        }
+    }
 }
