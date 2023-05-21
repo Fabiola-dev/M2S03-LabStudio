@@ -45,4 +45,16 @@ public class Colaborador {
             }
         }
     }
+
+    public static void listarColaboradorPorCargo(ArrayList<Cargo> cargos, ArrayList<Colaborador> colaboradores){
+        for (Cargo cargo : cargos){
+            for (Colaborador colaborador : colaboradores){
+                if (colaborador.getCargo() == cargo){
+                    System.out.println(colaborador);
+                }
+            }
+        }
+    }
+
+
 }
