@@ -25,4 +25,13 @@ public class Cargo {
     public Nivel getNivel() { return nivel; }
 
     public void setNivel(Nivel nivel) { this.nivel = nivel; }
+
+    @Override
+    public String toString() {
+        return "Cargo{" +
+                "descricao='" + descricao + '\'' +
+                ", salarioBase=" + salarioBase +
+                ", nivel=" + nivel +
+                '}';
+    }
 }
