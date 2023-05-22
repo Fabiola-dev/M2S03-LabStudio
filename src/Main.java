@@ -2,16 +2,18 @@ import Models.Cargo;
 import Models.Colaborador;
 import Models.Nivel;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Date;
 
 import static Models.Colaborador.*;
 
 public class Main {
-    public static void main(String[] args) {
 
-        ArrayList<Colaborador> colaboradores = new ArrayList<>();
-        ArrayList<Cargo> cargos = new ArrayList<>();
+    static ArrayList<Colaborador> colaboradores = new ArrayList<>();
+    static ArrayList<Cargo> cargos = new ArrayList<>();
+
+    public static void main(String[] args) {
 
         //Exercicio 03
         cargos.add(new Cargo("Desenvolvedor Python", 5500.0, Nivel.JUNIOR));
@@ -23,9 +25,36 @@ public class Main {
         colaboradores.add(new Colaborador("Julia",new Date(),cargos.get(2)));
 
         //colaboradorSemDesligamento(colaboradores);
-        listarColaboradorPorCargo(cargos, colaboradores);
-
-
+        //listarColaboradorPorCargo(cargos, colaboradores);
+        //adicionarColaborador(novoColaborador());
+        Colaborador colaborador = novoColaborador();
+        if (colaborador != null){
+            adicionarColaborador(colaborador);
+        }
     }
+
+    public static Colaborador novoColaborador(){
+        String nome = JOptionPane.showInputDialog(null, "Digite o nome do novo colaborador:");
+        Date dtAdmissao = new Date();
+        Cargo cargo = (Cargo) JOptionPane.showInputDialog(
+                null,
+                "Selecione um cargo",
+                "Seleção do cargo",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                cargos.toArray(),
+                cargos.get(0)
+        );
+        Colaborador colaborador = new Colaborador(nome, dtAdmissao, cargo);
+        System.out.println("Novo colaborador adicionado com sucesso! " + colaborador);
+        return colaborador;
+    }
+    public static void adicionarColaborador(Colaborador colaborador){
+        colaboradores.add(colaborador);
+    }
+
+
+
+
 
 }
