@@ -17,12 +17,17 @@ public class Main {
 
         //Exercicio 03
         cargos.add(new Cargo("Desenvolvedor Python", 5500.0, Nivel.JUNIOR));
-        cargos.add(new Cargo("Desenvolvedor Fullstack", 7500.0, Nivel.PLENO));
+        cargos.add(new Cargo("Desenvolvedor Python", 7500.0, Nivel.PLENO));
+        cargos.add(new Cargo("Desenvolvedor Fullstack", 8000.0, Nivel.PLENO));
         cargos.add(new Cargo("Desenvolvedor Front-End", 9500.0, Nivel.SENIOR));
+        cargos.add(new Cargo("Desenvolvedor Back-End", 4500.0, Nivel.JUNIOR));
+        cargos.add(new Cargo("Desenvolvedor Back-End", 6500.0, Nivel.PLENO));
 
         colaboradores.add(new Colaborador("Mônica",new Date(),cargos.get(0)));
         colaboradores.add(new Colaborador("Sérgio",new Date(),cargos.get(1)));
-        colaboradores.add(new Colaborador("Julia",new Date(),cargos.get(2)));
+        colaboradores.add(new Colaborador("Julia",new Date(),cargos.get(1)));
+        colaboradores.add(new Colaborador("Denise",new Date(),cargos.get(2)));
+        colaboradores.add(new Colaborador("Pedro",new Date(),cargos.get(0)));
 
         //colaboradorSemDesligamento(colaboradores);
         //listarColaboradorPorCargo(cargos, colaboradores);
@@ -33,14 +38,21 @@ public class Main {
 //        if (colaborador != null){
 //            adicionarColaborador(colaborador);
 //        }
+
         //Exercicio 8
-        desligarColaborador();
+        //desligarColaborador();
+
+        //Exercicio 9
+        promoverColaboradorCargo(cargos, colaboradores);
+
+        //desligarColaborador();
       
         //adicionarColaborador(novoColaborador());
-        Colaborador colaborador = novoColaborador();
-        if (colaborador != null){
-            adicionarColaborador(colaborador);
-        }
+        //Colaborador colaborador = novoColaborador();
+        //if (colaborador != null){
+        //    adicionarColaborador(colaborador);
+        //}
+
     }
 
     public static Colaborador novoColaborador(){
@@ -56,7 +68,7 @@ public class Main {
                 cargos.get(0)
         );
         Colaborador colaborador = new Colaborador(nome, dtAdmissao, cargo);
-        System.out.println("Novo colaborador adicionado com sucesso! " + colaborador);
+        System.out.println("Novo colaborador " + colaborador.getNome() + " foi adicionado com sucesso!");
         return colaborador;
     }
     public static void adicionarColaborador(Colaborador colaborador){
@@ -76,10 +88,34 @@ public class Main {
         );
         colaborador.setDtDesligamento(new Date());
         System.out.println("Colaborador descadastrado com sucesso em " + colaborador.getDtDesligamento());
-
     }
 
-
+    public static void promoverColaboradorCargo(ArrayList<Cargo> cargos, ArrayList<Colaborador> colaboradores){
+        Cargo cargo = (Cargo) JOptionPane.showInputDialog(
+                null,
+                "Selecione um cargo",
+                "Seleção do cargo",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                cargos.toArray(),
+                cargos.get(0)
+        );
+        Colaborador colaborador = (Colaborador) JOptionPane.showInputDialog(
+                null,
+                "Selecione o colaborador",
+                "Seleção do Caloborador",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                colaboradores.toArray(),
+                colaboradores.get(0)
+        );
+        if (cargo.getSalarioBase() < colaborador.getSalario()){
+            System.out.println(colaborador.getNome() + " foi promovido para o cargo de "
+                    + cargo.getDescricao() + ".");
+        }
+//        System.out.println(cargo.getSalarioBase());
+//        System.out.println(colaborador.getSalario());
+    }
 
 
 
