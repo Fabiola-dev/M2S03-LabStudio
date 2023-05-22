@@ -44,6 +44,15 @@ public class Main {
 
         //Exercicio 9
         promoverColaboradorCargo(cargos, colaboradores);
+
+        //desligarColaborador();
+      
+        //adicionarColaborador(novoColaborador());
+        //Colaborador colaborador = novoColaborador();
+        //if (colaborador != null){
+        //    adicionarColaborador(colaborador);
+        //}
+
     }
 
     public static Colaborador novoColaborador(){
@@ -65,6 +74,7 @@ public class Main {
     public static void adicionarColaborador(Colaborador colaborador){
         colaboradores.add(colaborador);
     }
+
     public static void desligarColaborador(){
         JOptionPane.showMessageDialog(null, "Desligar próximo colaborador");
         Colaborador colaborador = (Colaborador) JOptionPane.showInputDialog(
@@ -106,6 +116,7 @@ public class Main {
 //        System.out.println(cargo.getSalarioBase());
 //        System.out.println(colaborador.getSalario());
     }
+
 
 
 
