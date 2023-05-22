@@ -26,6 +26,16 @@ public class Main {
 
         //colaboradorSemDesligamento(colaboradores);
         //listarColaboradorPorCargo(cargos, colaboradores);
+
+        //Exercicio 7
+        //adicionarColaborador(novoColaborador());
+//        Colaborador colaborador = novoColaborador();
+//        if (colaborador != null){
+//            adicionarColaborador(colaborador);
+//        }
+        //Exercicio 8
+        desligarColaborador();
+      
         //adicionarColaborador(novoColaborador());
         Colaborador colaborador = novoColaborador();
         if (colaborador != null){
@@ -52,6 +62,23 @@ public class Main {
     public static void adicionarColaborador(Colaborador colaborador){
         colaboradores.add(colaborador);
     }
+
+    public static void desligarColaborador(){
+        JOptionPane.showMessageDialog(null, "Desligar próximo colaborador");
+        Colaborador colaborador = (Colaborador) JOptionPane.showInputDialog(
+                null,
+                "Selecione o colaborador",
+                "Seleção do Caloborador",
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                colaboradores.toArray(),
+                colaboradores.get(0)
+        );
+        colaborador.setDtDesligamento(new Date());
+        System.out.println("Colaborador descadastrado com sucesso em " + colaborador.getDtDesligamento());
+
+    }
+
 
 
 
