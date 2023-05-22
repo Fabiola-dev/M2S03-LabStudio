@@ -35,6 +35,12 @@ public class Main {
 //        }
         //Exercicio 8
         desligarColaborador();
+      
+        //adicionarColaborador(novoColaborador());
+        Colaborador colaborador = novoColaborador();
+        if (colaborador != null){
+            adicionarColaborador(colaborador);
+        }
     }
 
     public static Colaborador novoColaborador(){
@@ -56,6 +62,7 @@ public class Main {
     public static void adicionarColaborador(Colaborador colaborador){
         colaboradores.add(colaborador);
     }
+
     public static void desligarColaborador(){
         JOptionPane.showMessageDialog(null, "Desligar próximo colaborador");
         Colaborador colaborador = (Colaborador) JOptionPane.showInputDialog(
@@ -71,6 +78,7 @@ public class Main {
         System.out.println("Colaborador descadastrado com sucesso em " + colaborador.getDtDesligamento());
 
     }
+
 
 
 
