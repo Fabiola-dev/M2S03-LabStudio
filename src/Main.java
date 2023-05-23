@@ -50,15 +50,6 @@ public class Main {
         //Exercicio 10
         ordemDecrescenteSalario(colaboradores);
         colaboradores.forEach(System.out::println);
-
-        //desligarColaborador();
-      
-        //adicionarColaborador(novoColaborador());
-        //Colaborador colaborador = novoColaborador();
-        //if (colaborador != null){
-        //    adicionarColaborador(colaborador);
-        //}
-
     }
 
     public static Colaborador novoColaborador(){
@@ -80,7 +71,6 @@ public class Main {
     public static void adicionarColaborador(Colaborador colaborador){
         colaboradores.add(colaborador);
     }
-
     public static void desligarColaborador(){
         JOptionPane.showMessageDialog(null, "Desligar próximo colaborador");
         Colaborador colaborador = (Colaborador) JOptionPane.showInputDialog(
@@ -133,7 +123,6 @@ public class Main {
         });
 
     }
-
 
 
 

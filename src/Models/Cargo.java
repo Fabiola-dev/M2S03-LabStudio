@@ -5,7 +5,6 @@ public class Cargo {
     private String descricao;
     private Double salarioBase;
     private Nivel nivel;
-
     public Cargo(){
 
     }
@@ -15,15 +14,10 @@ public class Cargo {
         this.nivel = nivel;
     }
     public String getDescricao() { return descricao; }
-
     public void setDescricao(String descricao) { this.descricao = descricao; }
-
     public Double getSalarioBase() { return salarioBase; }
-
     public void setSalarioBase(Double salarioBase) { this.salarioBase = salarioBase; }
-
     public Nivel getNivel() { return nivel; }
-
     public void setNivel(Nivel nivel) { this.nivel = nivel; }
 
     @Override
