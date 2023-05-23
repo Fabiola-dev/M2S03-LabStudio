@@ -9,6 +9,7 @@ public enum Nivel {
     private final int valor;
     private final String descricao;
 
+
     Nivel(int valor, String descricao) {
         this.valor = valor;
         this.descricao = descricao;
@@ -18,4 +19,12 @@ public enum Nivel {
     public String getDescricao() { return descricao; }
 
 
+    Nivel(int valor, String descricao) {
+        this.valor = valor;
+        this.descricao = descricao;
+    }
+
+    public int getValor() { return valor; }
+    public String getDescricao() { return descricao; }
 }
+
