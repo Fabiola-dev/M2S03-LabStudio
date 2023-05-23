@@ -4,6 +4,8 @@ import Models.Nivel;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 
 import static Models.Colaborador.*;
@@ -43,7 +45,11 @@ public class Main {
         //desligarColaborador();
 
         //Exercicio 9
-        promoverColaboradorCargo(cargos, colaboradores);
+        //promoverColaboradorCargo(cargos, colaboradores);
+
+        //Exercicio 10
+        ordemDecrescenteSalario(colaboradores);
+        colaboradores.forEach(System.out::println);
     }
 
     public static Colaborador novoColaborador(){
@@ -105,6 +111,17 @@ public class Main {
         }
 //        System.out.println(cargo.getSalarioBase());
 //        System.out.println(colaborador.getSalario());
+    }
+
+    public static void ordemDecrescenteSalario(ArrayList<Colaborador> colaboradores){
+        Collections.sort(colaboradores, new Comparator<Colaborador>() {
+            @Override
+            public int compare(Colaborador o1, Colaborador o2) {
+                return  o2.getSalario().compareTo(o1.getSalario());
+            }
+
+        });
+
     }
 
 
